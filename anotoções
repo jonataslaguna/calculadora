@@ -1,0 +1,23 @@
+
+
+/*Para fazer o resultado dos cálculos aparecerem na parte 'current' da tela da calculadora, é necessário atualizar o método 'updateScreen' da classe 'Calculator'. O método deve adicionar o valor do resultado da operação ao invés de manter o valor atual da operação.
+
+Veja o código atualizado do método 'updateScreen':*/
+
+updateScreen(
+    operationValue = null, operation = null, current = null, previous = null) {
+    if (operationValue === null) {
+      //Anexar número ao valor atual
+      this.currentOperationText.innerText += this.currentOperation
+    } else {
+      // Checar se o valor é zero, se for apenas adicione o valor atual
+      if (previous === 0) {
+        operationValue = current
+      }
+      // Adicionar valor atual ao anterior
+      this.previousOperationText.innerText = `${operationValue} ${operation}`;
+      this.currentOperationText.innerText = operationValue.toString();
+    }
+  }
+  
+/*No código acima, o valor atual da operação é convertido em string e adicionado à parte 'current' da tela da calculadora, substituindo o valor anterior. Agora, quando uma operação é executada, o resultado será mostrado na tela da calculadora.*/

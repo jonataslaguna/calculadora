@@ -54,7 +54,7 @@ class Calculator {
         operationValue = previous / current
         this.updateScreen(operationValue, operation, current, previous)
         break
-      case "DEL":
+      case "Del":
         this.processDelOperator()
         break
       case "CE":
@@ -119,8 +119,7 @@ class Calculator {
 
   // Precessar uma operação
   processEqualOperator() {
-    let operation = this.previousOperationText.innerText.split(" ")[1];
-
+    let operation = this.previousOperationText.innerText.split(" ")[1]
     this.processOperation(operation)
   }
 }
